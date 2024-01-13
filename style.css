@@ -345,73 +345,92 @@ section{
   transition: .5s;
 }
 .education{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  flex-direction: column;
-  padding-bottom: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: auto ;
+    padding-bottom: 5rem;
 }
 
 .education .education-row{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
 
-}
 .education-row .education-column{
-  flex: 1 1 40rem;
+    flex: 1 1 40rem;
 }
-.education-column .title{
-  position: relative;
-  display: inline-block;
-  font-size: 2.5rem;
-  margin: 0 0 1.5rem 2rem;
+
+.education-column.title{
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem 2rem;
 }
+
 .education-column .education-box{
-  position: relative;
-  border-left: .2rem solid var(--main-color);
+    border-left: .2rem solid var(--main-color);
 }
 
 .education-box .education-content{
-  position: relative;
-  padding-left: 2rem;
+    position: relative;
+    padding-left: 2rem;
 }
+
+.education-box .education-content::before{
+    content: '';
+    top: 0;
+    height: 2rem;
+    left: -1.1rem;
+    border-radius: 50%;
+    background: var(--main-color);
+    width: 2rem;
+    position: absolute;
+}
+
 .education-content .content{
-  position: relative;
-  padding-left: 2rem;
+    position: relative;
+    padding: 1.5rem;
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
 }
 
-.education-content .content::before{
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background: var(--second-bg-color);
-  z-index: -1;
-  transition: .5s;
+.education-box .content::before{
+    content: '';
+    top: 0;
+    height: 100%;
+    left: 0;
+    background: var(--second-bg-color);
+    position: absolute;
+    z-index: -1;
+    transition: .5s;
 }
 
-.education-column .content .year{
-  font-size: 1.5rem;
-  color: var();
-  padding-bottom: .5rem;
+.education-box .content:hover::before{
+    width: 100%;
 }
-.education-column .content .year i{
-  padding-right: .5rem;
 
+.education-content .content .year{
+    font-size: 1.5rem;
+    color: var(--main-color);
+    padding-bottom: .5rem;
 }
+
+.education-content .content .year i{
+    padding-right: .5rem;
+}
+
 .education-content .content h3{
-  font-size: 2rem;
-  color: var(--main-color);
-  padding-bottom: .5rem;
+    font-size: 2rem;
+    color: var(--text-color);
 }
+
 .education-content .content p{
-  font-size: 1.6rem;
-  color: #777;
-  padding-bottom: .5rem;
+    font-size: 1.6rem;
+    padding: .5rem;
+    color: var(--text-color);
 }
 /* skills part */
 .skills{
